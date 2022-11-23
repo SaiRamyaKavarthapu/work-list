@@ -1,49 +1,44 @@
 
-import { useState} from "react";
+import { useState } from "react";
 
 
-const AddTodo = ({data, addItem}) => {
-    var [newInputItem, setnewInputItem] = useState('');
+const AddTodo = ({ data, addItem }) => {
+  var [newInputItem, setnewInputItem] = useState('');
 
-    
-    const handleOnCreate = (e) => {
-        e.preventDefault();
-        Promise.resolve(addItem(newInputItem)).then(() => {
-            setnewInputItem('')
-        });
-        console.log("newInputItem",newInputItem)
-      }
+  const handleOnCreate = (e) => {
+    e.preventDefault();
+    Promise.resolve(addItem(newInputItem)).then(() => {
+      setnewInputItem('')
+    });
+    console.log("newInputItem", newInputItem)
+  }
 
-    const handleOnChange = (event) => {
-        setnewInputItem(event.target.value);
-        console.log("newInputItem",newInputItem)
-      }
-      
+  const handleOnChange = (event) => {
+    setnewInputItem(event.target.value);
+    console.log("newInputItem", newInputItem)
+  }
 
-   
-    
-    return (
-      <>
+  return (
+    <>
       <div className="textField">
-        <input 
+        <input
           type="text"
           placeholder="Enter your task"
           required
-          value= {newInputItem}
-           onChange={handleOnChange} 
-          />
-        
-           <button onClick={handleOnCreate} >
-                AddTask
-            </button>
+          value={newInputItem}
+          onChange={handleOnChange}
+        />
+
+        <button onClick={handleOnCreate} >
+          AddTask
+        </button>
 
 
       </div>
-       
-      
-      </>
-    );
-  };
-  
-  export default AddTodo;
-  
+
+
+    </>
+  );
+};
+
+export default AddTodo;

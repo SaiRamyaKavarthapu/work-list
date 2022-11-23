@@ -1,4 +1,5 @@
 import { useState, useId } from "react";
+import '../../src/App.css';
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
 
@@ -6,8 +7,8 @@ import TodoList from './TodoList'
 function App() {
 
 
-    var [data, setData] = useState([]);
-    const addItem = (item) => {
+  var [data, setData] = useState([]);
+  const addItem = (item) => {
     const newTodos = [...data, item]
     console.log("newTodos", newTodos)
     setData(newTodos);
@@ -22,8 +23,11 @@ function App() {
 
   return (
 
-    <div className="container-md">
-      <h1>Todo-List</h1>
+    <div className="to-do-app">
+      <div className="header">
+        <h1>Todo-List</h1>
+      </div>
+
       <br />
 
       <AddTodo data={data} addItem={addItem} />
