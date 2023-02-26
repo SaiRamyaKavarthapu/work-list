@@ -11,10 +11,12 @@ function App() {
   var [data, setData] = useState([]);
 
   const addItem = (item) => {
-   const newTodos=[item];
-   setData(newTodos);
-  
+    const newTodos = [...data, item]
+    console.log("newTodos", newTodos)
+    setData(newTodos);
   }
+
+
   const findItem = (item) => {
 
     return data.find((element) => element === item) 
@@ -28,12 +30,14 @@ function App() {
     setData([data,...selectedItem])
    
   }
-  const deleteItem = (item) => {
 
-    let index = data.map(element =>element).indexOf(item);
+  const deleteItem = (element) => {
+    let index = data.map(element => element).indexOf(element);
     data.splice(index, 1);
-    setData(data)
+    const newTodos = [...data]
+    setData(newTodos);
   }
+ 
 
   return (
     <div className="App">
