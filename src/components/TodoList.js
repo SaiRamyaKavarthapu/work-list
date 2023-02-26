@@ -1,17 +1,17 @@
+import Edit from '../Edit/Edit'
 
-const TodoList = ({data, deleteItem}) => {
+const TodoList = ({data, deleteItem,saveItem}) => {
+  console.log("data",data)
+ 
+  const renderItems = () => {
+    return data.map((item,index) =><><Edit key={index} item={item} deleteItem={deleteItem} saveItem={saveItem}/></>)
+   
+ }
 
+ 
   return(
-
     <div className="items-list">
-      <span className="name">
-      {data.map((item,index) =><ul key={index}>
-        <h5>{item} <button onClick={()=>deleteItem(item)} >delete</button></h5>
-       
-       </ul>
-
-      )}</span>
-       
+     {renderItems()}
     </div>
   );
 

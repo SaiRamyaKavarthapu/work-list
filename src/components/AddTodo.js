@@ -13,6 +13,8 @@ const AddTodo = ({ data, addItem }) => {
     console.log("newInputItem", newInputItem)
   }
 
+ 
+
   const handleOnChange = (event) => {
     setnewInputItem(event.target.value);
     console.log("newInputItem", newInputItem)
@@ -20,6 +22,7 @@ const AddTodo = ({ data, addItem }) => {
 
   return (
     <>
+    
       <div className="textField">
         <input
           type="text"
@@ -29,8 +32,8 @@ const AddTodo = ({ data, addItem }) => {
           onChange={handleOnChange}
         />
 
-        <button onClick={handleOnCreate} >
-          AddTask
+        <button onClick={(e)=>handleOnCreate(e)} >
+        AddTask
         </button>
 
 

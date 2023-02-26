@@ -1,3 +1,4 @@
+
 .to-do-app {
   box-sizing: border-box;
   width: 550px;
@@ -8,19 +9,37 @@
   box-shadow: 0 0 5px #252525;
 }
 
+.App {
+  text-align: center;
+  min-height: 500px;
+  width: 400px;
+  margin: 40px auto;
+}
 
-.header h1 {
-  background: #444;
-  padding: 7px;
-  border-radius: 3px 3px 0 0 ;
-  font-size: 36px;
-  margin: 0;
-  color: white;
-  font-weight: lighter;
+h1 {
+  text-align: center;
+  color: cadetblue;
+  text-shadow: 0 2px 2px black;
   
 }
 
-.items-list {
+.actions{
+  text-align: right;
+  align-items: right;
+  
+  }
+
+  .editdel{
+    float: right;
+    text-align: right;
+    padding-right: 5px;
+    nav-right: auto; 
+  }
+
+/* .items-list {
   background:rgb(213, 185, 255);
   border-radius: 3px;
+} */
+.name {
+  margin-left: 10px;
 }
